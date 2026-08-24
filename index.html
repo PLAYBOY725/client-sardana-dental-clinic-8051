@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sardana Dental Clinic | Premier Implant Centre in Mohali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif']
+                    },
+                    colors: {
+                        brand: { 500: '#0056b3', 600: '#004494' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-600 text-white py-2 px-4 text-center text-sm font-medium flex justify-center items-center gap-4">
+        <span>⭐ 4.9★ Rated on Google (120+ Reviews)</span>
+        <span class="hidden md:block">|</span>
+        <a href="tel:+919872510600" class="hidden md:block hover:underline">Emergency: +91 98725 10600</a>
+    </div>
+
+    <!-- Header -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold font-heading text-brand-600">Sardana Dental</div>
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#services" class="hover:text-brand-600">Services</a>
+                <a href="#why-us" class="hover:text-brand-600">Why Us</a>
+                <a href="#contact" class="hover:text-brand-600">Contact</a>
+            </div>
+            <a href="#booking" class="bg-brand-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-brand-500 transition">Book Consultation</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <div class="inline-flex items-center gap-2 bg-blue-50 text-brand-600 px-4 py-2 rounded-full mb-6 font-semibold">
+                <span>Verified Implant Specialists in Mohali</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold font-heading leading-tight mb-6">Your Smile, Our Signature Excellence.</h1>
+            <p class="text-xl text-slate-600 mb-8">Comprehensive multispeciality dental care delivered with precision, care, and the latest implant technology in the heart of Mohali.</p>
+            <div class="flex gap-4">
+                <a href="#booking" class="bg-brand-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-500 transition shadow-lg">Book Now</a>
+                <a href="https://wa.me/919872510600?text=Hello%20Sardana%20Dental%20Clinic,%20I%20want%20to%20inquire%20about%20your%20services." class="border border-slate-200 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition">Chat on WhatsApp</a>
+            </div>
+        </div>
+        <div class="bg-gradient-to-br from-brand-600 to-blue-400 p-8 rounded-3xl text-white">
+            <div class="grid grid-cols-2 gap-6">
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <div class="text-4xl font-bold mb-2">120+</div>
+                    <div class="opacity-80">Verified 5-Star Reviews</div>
+                </div>
+                <div class="bg-white/10 p-6 rounded-2xl">
+                    <div class="text-4xl font-bold mb-2">15+</div>
+                    <div class="opacity-80">Years of Expertise</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold font-heading mb-16 text-center">Comprehensive Dental Solutions</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                {[ {title: 'Dental Implants', desc: 'Precision-engineered implants to restore your natural bite and smile.'}, {title: 'General Dentistry', desc: 'Routine checkups, cleanings, and preventive care for the whole family.'}, {title: 'Cosmetic Dentistry', desc: 'Whitening, veneers, and smile makeovers with stunning results.'} ].map(item => (
+                    <div class="p-8 border border-slate-100 rounded-3xl hover:shadow-xl transition">
+                        <h3 class="text-2xl font-bold mb-4">{item.title}</h3>
+                        <p class="text-slate-600 mb-6">{item.desc}</p>
+                        <a href="#booking" class="text-brand-600 font-semibold underline">Inquire about this service</a>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section id="booking" class="py-20 bg-slate-100">
+        <div class="max-w-3xl mx-auto px-6 bg-white p-10 rounded-3xl shadow-sm">
+            <h2 class="text-3xl font-bold mb-8">Request Your Appointment</h2>
+            <div id="form-feedback" class="hidden mb-6 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200">
+                Thank you! We have received your request and will contact you shortly.
+            </div>
+            <form id="appointment-form" class="space-y-6">
+                <input type="text" placeholder="Your Name" required class="w-full p-4 border rounded-xl">
+                <input type="tel" placeholder="Phone Number" required class="w-full p-4 border rounded-xl">
+                <select class="w-full p-4 border rounded-xl">
+                    <option>Select Service</option>
+                    <option>Dental Implant Consultation</option>
+                    <option>Routine Checkup</option>
+                    <option>Emergency Service</option>
+                </select>
+                <button type="submit" class="w-full bg-brand-600 text-white py-4 rounded-xl font-bold hover:bg-brand-500">Confirm Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-bold font-heading mb-12 text-center">Common Questions</h2>
+            <div class="space-y-4">
+                <div class="border rounded-2xl">
+                    <button class="w-full p-6 text-left font-bold flex justify-between" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        Is the consultation covered? <span>+</span>
+                    </button>
+                    <div class="hidden p-6 pt-0 text-slate-600">Yes, we offer a comprehensive signature consultation to assess your unique dental needs.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-16 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="font-bold text-white text-xl mb-4">Sardana Dental Clinic</p>
+            <p>SCF 14, Phase 7, Mohali, Punjab 160059</p>
+            <p class="mt-4">Email: contact@sardanadentalclinic.com | Phone: +91 98725 10600</p>
+            <p class="mt-8 border-t border-slate-800 pt-8 text-sm">© 2024 Sardana Dental Clinic. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('appointment-form').onsubmit = function(e) {
+            e.preventDefault();
+            this.classList.add('hidden');
+            document.getElementById('form-feedback').classList.remove('hidden');
+        };
+    </script>
+</body>
+</html>
